@@ -215,6 +215,16 @@ Based on the shape of the histogram I created, I believe that the most useful st
 
 5.  Plot the distribution of `median` income using a histogram, faceted by `major_category`.
     Use the `binwidth` you chose in the earlier exercise.
+    
+```{r fig3,height=2, eval=TRUE}
+college_recent_grads_grouped <- college_recent_grads %>%
+  group_by(major_category)
+
+ggplot(data = college_recent_grads_grouped, aes(x = median)) +
+    geom_histogram(binwidth = 2000) +
+    facet_wrap(~major_category)
+```
+
 
 Now that we've seen the shapes of the distributions of median incomes for each major category, we should have a better idea for which summary statistic to use to quantify the typical median income.
 
