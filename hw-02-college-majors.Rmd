@@ -304,6 +304,24 @@ college_recent_grads %>%
 
 8.  Which STEM majors have median salaries equal to or less than the median for all majors' median earnings? Your output should only show the major name and median, 25th percentile, and 75th percentile earning for that major as and should be sorted such that the major with the highest median earning is on top.
 
+**Answer:**
+The following table represents which STEM majors have median salaries equal to or less than the median for all major's earning. This table was achieved by creating the grouping 'stem_categories' and including majors such as Biology & Life Science, Computers & Mathematics, Engineering, and Physical Sciences. Next I entered the new grouping into the 'college_recent_grads' file as a new column to allow the median to be filtered.
+
+```{r fig6, eval=TRUE, height=2}
+stem_categories <- c("Biology & Life Science", "Computers & Mathematics", "Engineering", "Physical Sciences")
+
+college_recent_grads <- college_recent_grads %>%
+  mutate(major_type = ifelse(major_category %in% stem_categories, "stem", "not stem"))
+
+college_recent_grads %>%
+  filter(
+    major_type == "stem",
+    median <= 36000
+  ) %>%
+  select(major, median, p25th, p75th) %>%
+  arrange(desc(median))
+```
+
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 ## What types of majors do women tend to major in?
