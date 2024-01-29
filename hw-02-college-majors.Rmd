@@ -242,9 +242,13 @@ college_recent_grads %>%
 
 7.  Which major category is the least popular in this sample? To answer this question we use a new function called `count`, which first groups the data and then counts the number of observations in each category (see below). Add to the pipeline appropriately to arrange the results so that the major with the lowest observations is on top.
 
-```{r}
+**Answer:**
+The following table represents the count of people in each major category ranking from least to most. The major with the lowest observation is the Interdisciplinary major with a count of 1.
+
+```{r fig5,height=2, eval=TRUE}
 college_recent_grads %>%
-  count(major_category)
+  count(major_category) %>%
+  arrange(n)
 ```
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
