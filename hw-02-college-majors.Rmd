@@ -145,6 +145,13 @@ college_recent_grads %>%
 
 1.  Using what you've learned so far, arrange the data in descending order with respect to proportion of women in a major, and display only the major, the total number of people with major, and proportion of women. Show only the top 3 majors by adding `top_n(3)` at the end of the pipeline.
 
+```{r}
+college_recent_grads %>%
+     arrange(desc(sharewomen)) %>%
+     select(major, total, sharewomen) %>%
+     top_n(3)
+```
+
 ## How do the distributions of median income compare across major categories?
 
 ```{marginfigure}
@@ -167,7 +174,7 @@ The first argument is the data frame, and the next argument gives the mapping of
 
 Let's start simple and take a look at the distribution of all median incomes, without considering the major categories.
 
-```{r fig,height=2}
+```{r fig,height=2, eval=TRUE}
 ggplot(data = college_recent_grads, mapping = aes(x = median)) +
   geom_histogram()
 ```
@@ -181,6 +188,14 @@ It's good practice to always think in the context of the data and try out a few 
 You might ask yourself: "What would be a meaningful difference in median incomes?" \$1 is obviously too little, \$10000 might be too high.
 
 3.  Try binwidths of \$1000 and \$5000 and choose one. Explain your reasoning for your choice. Note that the binwidth is an argument for the `geom_histogram` function. So to specify a binwidth of \$1000, you would use `geom_histogram(binwidth = 1000)`.
+
+**Answer:**
+I used a bindwidth of 2000 because it visually balanced the size of graph with the number of bars. When using 1000 I noticed that the bars were very skinny, making the graph difficult to read. Likewise, when using a binwidth of 5000, many of the smaller bars were not visible as they were covered by other bars.
+
+```{r fig2,height=2, eval=TRUE}
+ggplot(data = college_recent_grads, mapping = aes(x = median)) +
+  geom_histogram(binwidth = 2000)
+```
 
 We can also calculate summary statistics for this distribution using the `summarise` function:
 
