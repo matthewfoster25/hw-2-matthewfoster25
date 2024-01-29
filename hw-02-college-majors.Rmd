@@ -84,6 +84,9 @@ In the next section we aim to answer these questions.
 
 ## Which major has the lowest unemployment rate?
 
+**Answer:**
+The majors with the lowest unemployment rate at 0.00000% are, Mathematics and Computer Science, Military Technologies, Botany, Soil Science, and Educational Administion and Supervision. Although they are all tied at 0.00000%, the dataset has Mathematics and Computer Science as number 1.
+
 In order to answer this question all we need to do is sort the data.
 We use the `arrange` function to do this, and sort it by the `unemployment_rate` variable.
 By default `arrange` sorts in ascending order, which is what we want here -- we're interested in the major with the *lowest* unemployment rate.
