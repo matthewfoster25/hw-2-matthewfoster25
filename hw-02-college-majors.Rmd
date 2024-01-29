@@ -345,4 +345,19 @@ ggplot(college_recent_grads, aes(x = sharewomen, y = median, color = major_type)
 
 10. Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).
 
+**Answer:**
+My question is as follows... "What is the relationship between the proportion of women in a major and the amount of Year Round Full Time Work? Furthermore, how do the jobs in the 75th percentile contribute to this relationship?
+
+The visualization shows that the jobs with a bigger proportion of either male or female employees are more likely to have year round full time employment. However, the jobs that have a bigger balance of men and women do not have as many year round full time employment opportunities. Moreover, the majors and jobs with more women are less likely to be a part of the 75th percentile of income.
+
+```{r fig8, eval=TRUE, height=6}
+ggplot(college_recent_grads, aes(x = sharewomen, y = employed_fulltime_yearround, color = p75th)) +
+     geom_point() +
+     labs(title = "Scatterplot of Proportion of Women in Major vs. Year Round Fulltime Employment",
+          x = "Proportion of Women",
+          y = "Year Round Full Time Employment",
+          color = "75th Percentile Income") +
+     scale_color_gradient(low = "coral", high = "green")
+```
+
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
