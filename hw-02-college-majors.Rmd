@@ -2,11 +2,12 @@
 title: "HW 02 - What should I major in?"
 author: "Matthew Foster"
 output: 
-  tufte::tufte_html:
-    css: ../hw.css
-    tufte_variant: "envisioned"
-    highlight: pygments
-link-citations: true
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
 ---
 
 ```{r include = FALSE}
