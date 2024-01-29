@@ -230,11 +230,14 @@ Now that we've seen the shapes of the distributions of median incomes for each m
 
 6.  Which major category has the highest typical (you'll need to decide what this means) median income? Use the partial code below, filling it in with the appropriate statistic and function. Also note that we are looking for the highest statistic, so make sure to arrange in the correct direction.
 
-```{r eval=FALSE}
+**Answer:**
+The following table represents the highest typical (meaning highest average) median income. Engineering is the major with the highest typical median income at $57,000. This is followed by Computers & Mathematics at $45,000 and Business at $40,000.
+
+```{r fig4,height=2, eval=TRUE}
 college_recent_grads %>%
   group_by(major_category) %>%
-  summarise(___ = ___(median)) %>%
-  arrange(___)
+  summarise(typical_median_income = median(median)) %>%
+  arrange(desc(typical_median_income))
 ```
 
 7.  Which major category is the least popular in this sample? To answer this question we use a new function called `count`, which first groups the data and then counts the number of observations in each category (see below). Add to the pipeline appropriately to arrange the results so that the major with the lowest observations is on top.
