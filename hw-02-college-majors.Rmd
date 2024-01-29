@@ -127,6 +127,9 @@ college_recent_grads %>%
 
 ## Which major has the highest percentage of women?
 
+**Answer:**
+The major with the highest percentage of women is Early Childhood Education with 96.9% of students being women.
+
 To answer such a question we need to arrange the data in descending order.
 For example, if earlier we were interested in the major with the highest unemployment rate, we would use the following:
 
