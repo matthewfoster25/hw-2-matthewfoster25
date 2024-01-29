@@ -328,6 +328,19 @@ college_recent_grads %>%
 
 9.  Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
 
+**Answer:**
+The following scatter plot shows the comparison of Proportion of Women in Major (along the x-axis) to the Median Income they earn (along the y-axis). Furthermore, the colour of the scatterplot point shows if they are in the stem major (blue) or not a stem major (orange). The scatterplot shows that the majors with a higher proportion of women on average have a lower median income, while the male dominated majors have a much higher average median income.
+
+```{r fig7, eval=TRUE, height=6}
+ggplot(college_recent_grads, aes(x = sharewomen, y = median, color = major_type)) +
+  geom_point() +
+  labs(title = "Scatterplot of Median Income vs. Proportion of Women in Major",
+       x = "Proportion of Women in Major",
+       y = "Median Income",
+       color = "Major Type") +
+  theme_minimal()
+```
+
 ## Further exploration
 
 10. Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).
