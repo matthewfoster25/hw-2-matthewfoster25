@@ -209,7 +209,9 @@ college_recent_grads %>%
 ```
 
 4.  Based on the shape of the histogram you created in the previous exercise, determine which of these summary statistics is useful for describing the distribution.
-    Write up your description (remember shape, center, spread, any unusual observations) and include the summary statistic output as well.
+
+**Answer:**
+Based on the shape of the histogram I created, I believe that the most useful statistic for describing the distribution of data is 'Mean'. The reason for this is that the Min, Max, and Medium Median values are all not prominent on the graph. The data points hovering between 30,000 and 40,000 are the most prominent and are the clear median of the graph.
 
 5.  Plot the distribution of `median` income using a histogram, faceted by `major_category`.
     Use the `binwidth` you chose in the earlier exercise.
